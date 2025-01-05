@@ -1,93 +1,43 @@
 # Running Dinner Calculator V2
 
+This is the new and updated version of the [Running Dinner Calculator](https://courses.gistools.geog.uni-heidelberg.de/pk256/running-dinner-calculator) created by Jakob Tinapp and David Benedict for the FOSSGIS Seminar of Wintersemester 2022/23 at the geographic institute of the University of Heidelberg.
 
+Improvements compared to the old version include:
 
-## Getting started
+1. Automatic delegation of double cooks in case the number of Teams is not divisible by three
+2. Full integration of the entire process into python to
+3. Automated Mail writing
+4. reduced requirements (two excel spreadsheets are needed instead of one and a .kml Layer in Case of the old version)
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
-
-## Add your files
-
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
-
-```
-cd existing_repo
-git remote add origin https://gitlab.com/passion-projects-uni/running-dinner-calculator-v2.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.com/passion-projects-uni/running-dinner-calculator-v2/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Set auto-merge](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing (SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thanks to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
 
 ## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+The organizational process of a Running Dinner can get complicated especially if the number of participants is quite big. This script offers a quick solution to the challenge of team allocation and participant communication.
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+## How to 
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+1. Download and install [Anaconda Navigator](https://anaconda.org/) if you do not have it installed already.
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+2. Create an [openrouteservice account](https://openrouteservice.org/dev/#/login) if you do not already have one. 
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+3. Create a [standard token](https://openrouteservice.org/dev/#/home) to use for the API and copy the Key token to your clipboard.
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+4. Organize a running Dinner and gather the necessary information of the participants. For the script to work you should have two datatable matching the designation **data.xlsx** and **Afterparty.xlsx**. The **data.xlsx** one should contain the fields **"Team Nr."** (for ID), **Name 1** and **Name 2** (for Mailing), **Adress** (for Geocoding), **will to double** _([integer](https://www.w3schools.com/python/python_numbers.asp))_ and **readiness starter** _([bool](https://www.w3schools.com/python/python_booleans.asp))_ (for assigning Teams the courses they will cook themselves) and **Ring at** and **Allergies or else** (for the communication of essential information between Hosts and Guests via Mail). At the very least you shoul have the adresses. If you did not collect data on willingnes to cook twice or inability to cook the first course, we recommend you just create these columns anyway and fill them with homogenous values as the script depends on their presence. The **Afterparty.xlsx** file need only contain the column **Adress** containing the Adress of the Afterparty. If you do not have an Afterparty organized, we recommend you either do or type in an Adress located somewhere close to the center of the whole of the participants adresses as the script wont work without an Afterparty Adress and the assignment of courses is done by distance to the Afterparty location. Place both the **data.xlsx** and the **Afterparty.xlsx** files in the same Folder/Directory as the **Full_Script_RDC_V2.IPYNB** file (otherwise the script won't function)
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+5. Open the Full_Script_RDC_V2.IPYNB file with Jupyter Notebook (accesable through Anaconda Navigator), insert the token Key in the first cell, where it says """YOUR KEY HERE""" (**IMPORTANT NOTE FOR THOSE NOT WELL VERSED IN THE USAGE OF PYTHON**: if your Key is for example ex420, the space in the parenthesis should read _**key= "ex420"**_. There should only be one pair of quotation marks but it is necessary for the code to function, that those will be used ).
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+6. Run all the cells in their designated order by clicking the "Run \>" Button for each (if a cell has a * in square brackets next to it, it means, there is still a process of that cell running, so pause, while it runs the process).
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+7. If everything went right, there should now be a .txt file for every Team of your running dinner, containing their necessary information. Also, even if you stop the script before Mail creation, there should now be the **overview.txt** file in your folder.
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+If this intrigues you but you don't know what a running dinner is, we offer you this [explanation video](https://www.youtube.com/watch?si=_X1kL1hl2W7vYcCO&v=iZEZ5yNHWA8&feature=youtu.be) (so far we only have a german one. Running dinner fans are free to submit links to explanations in other languages).
 
-## License
-For open source projects, say how it is licensed.
+## Authors
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+V2: 
+* David Benedict <david.benedict@stud.uni-heidelberg.de>
+
+[V1:](https://courses.gistools.geog.uni-heidelberg.de/pk256/running-dinner-calculator)
+* David Benedict <david.benedict@stud.uni-heidelberg.de>
+* Jakob Tinapp <jakob.tinapp@stud.uni-heidelberg.de>
+* Jakob Moser <moser@cl.uni-heidelberg.de>
