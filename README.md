@@ -41,3 +41,9 @@ V2:
 * David Benedict <david.benedict@stud.uni-heidelberg.de>
 * Jakob Tinapp <jakob.tinapp@stud.uni-heidelberg.de>
 * Jakob Moser <moser@cl.uni-heidelberg.de>
+
+## Dependencies
+
+This script makes use of the [openrouteservice](https://openrouteservice.org/) API.
+
+
