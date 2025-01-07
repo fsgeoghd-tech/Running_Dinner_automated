@@ -37,7 +37,7 @@ If this intrigues you but you don't know what a running dinner is, we offer you 
 **V2:** 
 * David Benedict <david.benedict@stud.uni-heidelberg.de>
 
-**[V1:]**(https://courses.gistools.geog.uni-heidelberg.de/pk256/running-dinner-calculator)
+[**V1:**](https://courses.gistools.geog.uni-heidelberg.de/pk256/running-dinner-calculator)
 * David Benedict <david.benedict@stud.uni-heidelberg.de>
 * Jakob Tinapp <jakob.tinapp@stud.uni-heidelberg.de>
 * Jakob Moser <moser@cl.uni-heidelberg.de>
