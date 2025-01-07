@@ -43,9 +43,9 @@ V2:
 * Jakob Moser <moser@cl.uni-heidelberg.de>
 
 
-## Acknowledgments
+## Acknowledgments and Disclaimer
 
-This project uses the [OpenRouteService](https://openrouteservice.org/) API for route calculations. OpenRouteService is provided by [Heidelberg Institute for Geoinformation Technology (HeiGIT)](https://heigit.org/). 
+This project uses the [OpenRouteService](https://openrouteservice.org/) API for geocoding and route calculations. OpenRouteService is provided by [Heidelberg Institute for Geoinformation Technology (HeiGIT)](https://heigit.org/). 
 
 This project is **not** affiliated with or endorsed by OpenRouteService or HeiGIT. OpenRouteService is a third-party API used in this project to provide routing and geocoding functionalities. Please ensure that your use of this project complies with OpenRouteService's [Terms of Service](https://openrouteservice.org/terms-of-service/) and look into the [API documentation](https://openrouteservice.org/documentation/) for more information.
 
