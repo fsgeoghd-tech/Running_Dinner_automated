@@ -4,10 +4,10 @@ This is the new and updated version of the [Running Dinner Calculator](https://c
 
 Improvements compared to the old version include:
 
-1. Automatic delegation of double cooks in case the number of Teams is not divisible by three
-2. Full integration of the entire process into python to
-3. Automated Mail writing
-4. Reduced requirements (two excel spreadsheets are needed instead of one and a .kml Layer in Case of the old version)
+1. Automatic delegation of double cooks in case the number of Teams is not divisible by three,
+2. Full integration of the entire process into python to reduce the chance for confusion and human error,
+3. Automated Mail writing,
+4. Reduced requirements (two excel spreadsheets are needed instead of one and a .kml Layer in Case of the old version).
 
 
 ## Description
