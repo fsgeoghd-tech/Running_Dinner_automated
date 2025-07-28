@@ -16,7 +16,7 @@ The organizational process of a Running Dinner can get complicated especially if
 
 ## How to 
 
-1. Download and install [Anaconda Navigator](https://anaconda.org/) if you do not have it installed already.
+1. Download and install [Anaconda Navigator](https://anaconda.org/) or [Visual Studio Code](https://code.visualstudio.com/) if you do not have it installed already. 
 
 2. Create an [openrouteservice account](https://openrouteservice.org/dev/#/login) if you do not already have one. 
 
