@@ -7,7 +7,7 @@ import numpy as np
 # --- Configuration & Constants ---
 # You need an openrouteservice API-Key to run this script.
 # Further info is contained in the readme.
-ORS_API_KEY = """eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjYzMjUzNTliYmJjOTE0NDJiZTBlNzllYWU5Yjc0NWRiMmJhMzM0NDcyYTE4YjM2NTkxMzI0NzUzIiwiaCI6Im11cm11cjY0In0="""
+ORS_API_KEY = """Secret_API-Key"""
 
 DATA_FILE = "data.xlsx"
 AFTERPARTY_FILE = "Afterparty.xlsx"
